@@ -1,0 +1,5 @@
+.ie h1, .ie h2, .ie h3, .ie h4, .ie h5, .ie h6 {
+  font-family: helvetica; }
+
+.ie p {
+  font-family: "Helvetica Neue", Helvetica, arial, freesans, "liberation sans", sans-serif !important; }

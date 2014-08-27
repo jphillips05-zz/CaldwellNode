@@ -1635,7 +1635,7 @@ html[xmlns] .slides {
   height: 49px;
   margin: -20px 0 0;
   display: block;
-  background: url(/assets/images/bg_direction_nav2.png) no-repeat 0 0;
+  background: url(/images/bg_direction_nav2.png) no-repeat 0 0;
   position: absolute;
   top: 50%;
   z-index: 10;
@@ -1913,7 +1913,7 @@ a:focus {
   padding: 0 1em; }
 
 .header {
-  background: black url(../images/header-bg.png) repeat-x top left;
+  background: black url(/images/header-bg.png) repeat-x top left;
   height: 179px; }
   .header nav {
     max-width: 62.5rem;

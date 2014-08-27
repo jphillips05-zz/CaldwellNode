@@ -15,7 +15,7 @@ app.use(express.static(__dirname + '/public')); // set the static files location
 
 // routes ==================================================
 require('./app/routes')(app); // configure our routes
-
+require('./app/config')(app);
 // start app ===============================================
 app.listen(port);										// startup our app at http://localhost:8080
 console.log('Magic happens on port ' + port); 			// shoutout to the user

@@ -1,10 +1,8 @@
 module.exports = function(app) {
-	app.get('/api/artist', function(req, res){
 
+	app.get('/api/categories', function(req, res){
+		console.log('test');
 	});
 
-	app.get('*', function(req, res) {
-			res.sendfile('./public/index.html'); // load our public/index.html file
-		});
 
 };

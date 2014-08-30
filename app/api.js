@@ -1,4 +1,4 @@
-var API = function() { };
+var API = function() {};
 
 var db = require('../config/db');
 

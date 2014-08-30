@@ -1,1 +1,38 @@
-home
+<div class="row"> 
+    <img src="/images/Gallery%20Inside_NEW_cropped_MIN.jpg" />
+</div>
+
+<div class="row or">
+	<div class="large-3 columns left-col">
+	 	<h3 class="section-title">categories</h3>
+	 	<ul class="category">
+ 			<li ng-repeat="category in catagories"><a href="#/category/{{category.Id}}">{{category.Name}}</a></li>
+		 </ul>	
+	</div>
+
+<div class="large-9 columns right-col">
+	<h3 class="section-title">Featured Artists</h3>
+	<div ng-repeat="artist in artists" class="artist-excerpt group">
+		<div class="artist-photo">
+			<div class="cont">
+				<img ng-src="{{artist.img}}" />
+			</div>
+		</div>
+		<div class="copy">
+			<h3>{{artist.name}}</h3>
+			<p>{{artist.bio}}</p>
+			<a href="#/artist/{{artist.id}}" class="button medium">Read More</a>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<div class="row">
+    <div class="large-3 columns">
+        <div class="sig">
+            <img src="/images/CAE_Signature.png" />
+        </div>
+    </div>
+    <div class="large-9 columns"></div>
+</div>

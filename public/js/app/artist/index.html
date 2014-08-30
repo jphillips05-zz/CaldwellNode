@@ -1,0 +1,28 @@
+<div class="large-3 columns left-col artist-page">
+	<h3 class="section-title">Artists</h3>
+	<div class="artist-photo">
+		<img ng-src="{{profImage.href}}" />
+	</div>
+</div>
+
+<div class="large-9 columns right-col">
+	<div class="artist-bio">
+		<h3 class="artist-name">{{artist.Name}}</h3>
+		<p>{{artist.Bio}}</p>
+	</div>
+	<div class="sub-section-title">
+        <div class="artist-art">
+            <ul class="small-block-grid-2 large-block-grid-3">
+            	<li ng-repeat="art in arts">
+            		<div class="cont">
+            			<a href="#/art/{{art.Id}}"> <!--{{art.Id}}-->
+            				<img ng-src="{{art.ImageHref}}" />
+            			</a>
+            		</div>
+            		<h5>{{art.Name}}</h5>
+            		<p>{{art.Description}}</p>
+            	</li>
+        	</ul>
+    	</div>
+	</div>
+</div>

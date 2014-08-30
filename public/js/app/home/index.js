@@ -12,8 +12,12 @@ angular.module('app.home',[
 .controller('homeController', ['$scope','$rootScope', 'commonService', function($scope, $rootScope, commonService){
 	$rootScope.title = 'Home';
 
-	$scope.catagories = commonService.getCategories(function(d){
-		//console.log(d);
+	commonService.getCategories(function(d){
+		$scope.catagories = d;	
+	});
+
+	commonService.buildIndex(function(d){
+		$scope.artists = d;
 	});
 
 }])

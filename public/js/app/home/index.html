@@ -6,11 +6,12 @@
 	<div class="large-3 columns left-col">
 	 	<h3 class="section-title">categories</h3>
 	 	<ul class="category">
- 			<li ng-repeat="category in catagories"><a href="#/category/{{category.Id}}">{{category.Name}}</a></li>
+ 			<li ng-repeat="category in catagories"><a href="#/category/{{category.Id}}">{{category.name}}</a></li>
 		 </ul>	
 	</div>
 
 <div class="large-9 columns right-col">
+	<a href="#/Add/Artist" class="button medium">Add</a>
 	<h3 class="section-title">Featured Artists</h3>
 	<div ng-repeat="artist in artists" class="artist-excerpt group">
 		<div class="artist-photo">
@@ -19,9 +20,9 @@
 			</div>
 		</div>
 		<div class="copy">
-			<h3>{{artist.name}}</h3>
-			<p>{{artist.bio}}</p>
-			<a href="#/artist/{{artist.id}}" class="button medium">Read More</a>
+			<h3>{{artist.firstName}} {{artist.lastName}}</h3>
+			<p ng-bind-html="artist.bio">{{artist.bio}}</p>
+			<a href="#/Artist/{{artist._id}}" class="button medium">Read More</a>
 		</div>
 	</div>
 </div>

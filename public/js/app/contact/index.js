@@ -10,7 +10,8 @@ angular.module('app.contact', [])
 		.when('/ContactUs', {
 			templateUrl: '/js/app/contact/index.html',
 			controller: 'contactController',
-			caseInsensitiveMatch: true
+			caseInsensitiveMatch: true,
+			access: { requiredLogin: false }
 		})
 }])
 

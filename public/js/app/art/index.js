@@ -7,7 +7,8 @@ angular.module('app.art', [
 		.when('/art/:artId', {
 			templateUrl: '/js/app/art/index.html',
 			controller: 'artController',
-			caseInsensitiveMatch: true
+			caseInsensitiveMatch: true,
+			access: { requiredLogin: false }
 		})
 }])
 

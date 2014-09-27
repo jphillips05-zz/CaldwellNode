@@ -7,7 +7,8 @@ angular.module('app.category', [
 		.when('/category/:categoryId', {
 			templateUrl: '/js/app/category/index.html',
 			controller: 'categoryController',
-			caseInsensitiveMatch: true
+			caseInsensitiveMatch: true,
+			access: { requiredLogin: false }
 		});
 }])
 

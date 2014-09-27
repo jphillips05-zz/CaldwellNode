@@ -5,13 +5,16 @@ angular.module('app.home',[
 		.when('/', {
 			templateUrl: '/js/app/home/index.html',
 			controller: 'homeController',
-			caseInsensitiveMatch: true
+			caseInsensitiveMatch: true,
+			access: { requiredLogin: false }
 		});
 }])
 
-.controller('homeController', ['$scope','$rootScope', 'commonService', function($scope, $rootScope, commonService){
+.controller('homeController', ['$scope','$rootScope', 'commonService', 'session', function($scope, $rootScope, commonService, session){
 	$rootScope.title = 'Home';
 
+	$scope.isAuth = false;
+	
 	commonService.getCategories(function(d){
 		$scope.catagories = d;	
 	});

@@ -2,20 +2,28 @@ angular.module('app.services', [
 ])
 
 .service('commonService', ['$http', function($http){
+	this.getArt = function(art, callback) {
+		$http({method: 'GET', url: '/api/art/' + art})
+		.success(function(data, status){
+			callback(data);
+		})
+		.error(function(data, status){
+			callback(false);
+		});
+	};
+
 	this.getCategories = function(callback){
-		$http({method: 'GET',url: '/api/categories'})
+		$http({method: 'GET',url: '/api/category'})
 		.success(function(data, status) {
-			//console.log(data,status);
 			callback(data);
 		})
 		.error(function(data, status) {
-			console.log(data,status);
 			callback(false);
 		});
 	};
 
 	this.buildIndex = function(callback) {
-		$http({method: 'GET', url: '/api/buildIndex'})
+		$http({method: 'GET', url: '/api/artist'})
 		.success(function(data, status){
 			callback(data);
 		})

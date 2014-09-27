@@ -1,6 +1,7 @@
 var API = function() { };
 
 var db = require('../config/db');
+//var db2 = require('../config/db2');
 
 API.prototype.getCategories = function(callback) {
 	db.clearParams();

@@ -6,12 +6,14 @@ angular.module('app.events', [
 		.when('/events', {
 			templateUrl: '/js/app/events/index.html',
 			controller: 'eventIndexController',
-			caseInsensitiveMatch: true
+			caseInsensitiveMatch: true,
+			access: { requiredLogin: false }
 		})
 		.when('/event/:eventId', {
 			templateUrl: '/js/app/events/event.html',
 			controller: 'eventController',
-			caseInsensitiveMatch: true
+			caseInsensitiveMatch: true,
+			access: { requiredLogin: false }
 		});
 }])
 

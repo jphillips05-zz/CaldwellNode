@@ -10,7 +10,8 @@ angular.module('app.about', [])
 		.when('/AboutUs', {
 			templateUrl:'/js/app/about/index.html',
 			contrroller: 'aboutController',
-			caseInsensitiveMatch: true
+			caseInsensitiveMatch: true,
+			access: { requiredLogin: false }
 		});
 }])
 

@@ -6,23 +6,35 @@ angular.module('app.artist', [
 		.when('/artist/:artistId', {
 			templateUrl: '/js/app/artist/index.html',
 			controller: 'artistController',
-			caseInsensitiveMatch: true
+			caseInsensitiveMatch: true,
+			access: { requiredLogin: false }
 		});
 }])
 
-.controller('artistController', ['$scope','$rootScope','$routeParams','commonService', function($scope, $rootScope, $routeParams, commonService){
+.controller('artistController', ['$scope','$rootScope','$routeParams','commonService', 'session', function($scope, $rootScope, $routeParams, commonService, session){
 	$rootScope.title = 'Artist'
 
 	$scope.artistId = $routeParams.artistId;
+	$scope.arts = [];
 
 	commonService.artistInfo($scope.artistId, function(data){
 		if(data) {
-			$scope.artist = data[0][0];
-			$scope.profImage = data[1][0];
-			$scope.arts = data[2];
+			$scope.artist = data;
+			for(var i=0; i<data.art.length; i++) {
+				commonService.getArt(data.art[i], function(artData){
+					if(artData){
+						$scope.arts.push(artData);
+					}
+				});
+			}
 		}
+
 	});
 
-
+	session.getUser(function(ret){
+		if(ret) {
+			$scope.isAuth = true;
+		} 
+	});
 
 }]);

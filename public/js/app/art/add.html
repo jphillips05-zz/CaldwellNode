@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="large-8 columns">
+		<div class="row">
+			<label for="">Name</label>
+			<input type="text" id="name" name="name" ng-model="art.name" />
+		</div>
+		<div class="row">
+			<label for="">Description</label>
+			<input type="text" id="desc" name="desc" ng-model="art.desc" />
+		</div>
+		<div class="row">
+			<img src="{{artimageData}}" ng-show="artimageData.length > 0"/>
+			<input type="file" id="file" name="file" onChange="angular.element(this).scope().imageChange(this);"/>
+		</div>
+		<div class="row">
+			<ul class="catList">
+				<li ng-repeat="cat in cats">
+					<input 	type="checkbox" 
+							name="cats[]" 
+							ng-checked="inCat.indexOf(cat) > 1" 
+							ng-click="toggleCat(cat)" />
+					<span>{{cat}}</span>
+				</li>
+			</ul>
+		</div>
+		<div class="row">
+            <input type="submit" value="Add Art" class="small button" ng-click="addArt(art)" />
+        </div>
+	</div>
+</div>

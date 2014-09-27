@@ -1,0 +1,46 @@
+<div class="row">
+	<div class="large-12 columns">
+	 	<div class="row">
+            {{msg}}
+        </div>
+        <div class="row">
+            <div class="large-4 columns">
+                <h2>Profile Image</h2>
+                <img src="{{newProfileImage}}" class="ProfileImage" />
+            	<img ng-src="{{artist.profileImage}}" class="ProfileImage"  ng-show="!newProfileImage"/>
+                <input type="file" id="newProfileImage" name="newProfileImage" onChange="angular.element(this).scope().profileImageChange(this);" accept="image/*"/>
+            </div>
+            <div class="large-8 columns">
+            	<div class="row">
+    				<h2>{{artist.firstName}} {{artist.lastName}}</h2>
+            	</div>
+        		<div class="row">
+            		<textarea ckeditor="editorOptions" name="editor" ng-model="Bio" ng-change="save(Bio)"></textarea>
+        		</div>
+        		<div class="row">
+        			<input type="submit" value="Save" ng-click="saveBio()" />
+        		</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <h2>Art</h2> <a href="#/Art/Add/{{artist._id}}" class="button medium">Add</a>
+                <div class="sub-section-title">
+                    <div class="artist-art">
+                        <ul class="small-block-grid-2 large-block-grid-3">
+                            <li ng-repeat="art in arts">
+                                <div class="cont">
+                                    <a href="#/art/{{art._id}}"> <!--{{art.Id}}-->
+                                        <img ng-src="{{art.href}}" />
+                                    </a>
+                                </div>
+                                <h5>{{art.name}}</h5>
+                                <p>{{art.desc}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+            </div>
+        </div>
+	</div>
+</div>
